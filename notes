@@ -1,0 +1,24 @@
+Simple scenario work here,
+1>has belongs to used for get value of parent model.
+2>it is the inverse of the has and hasmany model.
+3>latestofMany get latest record from eloquent.
+4>oldestOfMany get first record from many records
+5>ofMany has also used for aggregate function in eloqunt.
+
+***
+hasOne->this is the call only on ids,
+hasMany->this is the call only on ids,
+belongsTo
+hasOneThrough ->this has used for get data from third table.
+hasManyThrough->this is the same for the get data from the third table.
+
+BelongstoMany->required third table to access the data in model.
+-Like , user, role is has required user_role model for accessing data
+
+***
+Polymorphic one to one 
+
+in polymorphic relation ship , child model can access with multiple model.
+
+OneToMany
+in polymorphic relationsship, child model can access with multiple model, we can use this inmodel morphMany method for both table.

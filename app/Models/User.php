@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -41,4 +42,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function account()
+    {
+        return $this->hasOne('App\Models\Account');
+    }
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role')->wherePivot('status',1);
+    }
+    public function profile()
+    {
+        return $this->morphOne('App\Models\Profile','profileable');
+    }
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image','imageable');
+    }
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post','user_id','id');
+    }
 }
