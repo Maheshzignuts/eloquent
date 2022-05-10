@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+//use App\Controllers\AdminController;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+//Route::post('post/store','AdminController@postStore');
+Route::post('post/store',[AdminController::class,'postStore']);
+
+
+
+Route::group(['middleware',['web']],function(){
+    Route::post('/employee/store',[AdminController::class,'employeeStore']);
 });

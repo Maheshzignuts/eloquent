@@ -23,4 +23,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/learning',[AdminController::class,'index']);
+    Route::get('create/post',[AdminController::class,'createPost']);
+});
+
+Route::get('/send-email-queue',function(){
+    $details['email']='ma116230307056@gmail.com';
+    dispatch(new App\Jobs\TestEmailJob($details));
+    return response()->json(['message'=>'Mail Send Successfully']);
 });

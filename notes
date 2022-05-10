@@ -22,3 +22,31 @@ in polymorphic relation ship , child model can access with multiple model.
 
 OneToMany
 in polymorphic relationsship, child model can access with multiple model, we can use this inmodel morphMany method for both table.
+
+Date:09-05-2022
+https://www.parthpatel.net/laravel-collection-methods-tutorial/#:~:text=The%20filter()%20method%20is,not%20change%20the%20original%20collection.
+1>What is collection, collection check value is available or not particular variable.
+if yes then show true ,and not show then false
+
+2>each method done,
+3>Filter
+
+
+Date:10-05-2022
+Session put method has store data in session.
+Session get method has used for retrive data of session.
+Session forget has used of remove value of session.
+Session flush used for remove all session data.
+
+***
+Middleware basic
+->we can create middleware using cmd
+->after middleware created ,we can set some condition.
+->We can register this middleware based on requirement.
+->After register this we can applied to the particulare route.
+///New in middleware
+->We can directly give class name to the route.
+->if we have assigned middleware to the group routes then if we want remove middleware to the some specific route then we can use withoutmiddleware method behind the route.
+->We can also used groupof 
+
+https://www.avyatech.com/role-based-authentication-authorization-in-laravel/

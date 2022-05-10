@@ -3,27 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
-
-    public function image()
+    
+    public function getfirstNameAttribute($value)
     {
-        return $this->morphOne('App\Models\Image','imageable');
+        return strtoupper($value);
     }
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User');
-    }
-    public function comments()
-    {
-        return $this->hasMany('App\Models\Comment');
-    }
-    public function comment()
-    {
-        return $this->morphMany('App\Models\Comment','commentable');
-    }
+    
 }
 

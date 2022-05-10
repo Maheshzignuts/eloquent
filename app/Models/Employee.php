@@ -10,4 +10,9 @@ class Employee extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    // public function setNameAttribute($value)
+    // {
+    //     $this['name']=strtoupper($value)
+    // }
 }
